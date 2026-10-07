@@ -5,7 +5,7 @@ description: Draw or edit website sections and pages in Figma for a light-starte
 
 # Figma sections
 
-Tools: `figma-console` MCP. If it does not answer, `figma-bridge`, then the official Figma MCP; say which one you used.
+Tools: `figma-console` MCP. If it does not answer, `figma-bridge`; the official Figma MCP only as a last resort (Max is on the free Figma plan: a handful of calls per month). Say which one you used. Read-only tasks without Figma Desktop: figma-console reads by file URL (`fileUrl`) through the REST API.
 
 ## 1. Connect (once per chat)
 
