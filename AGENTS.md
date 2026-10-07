@@ -22,6 +22,8 @@ Small design and web tasks: Figma sections, fixes, one page of an existing proje
 | `DESIGN.md` | Design rules with status: Confirmed / Used / Proposal / Deprecated | Only durable rules; a new decision you made is `Proposal` until Max approves |
 | `REFERENCES.md` | Every source: client material, Figma frame, link, image | ID (`M1…` client materials, `R1…` references), what, where, status (approved / working / old / reference / unknown), use for. Other files cite these IDs |
 
+Max's short commands: «принято» / «ок, утверждаю» = the result is accepted → update memory and suggest a new chat; «запомни: …» = write it to the right file and confirm in one line; «забудь / устарело: …» = mark it Deprecated or remove it.
+
 Never invent client facts; mark guesses as guesses. Found along the way but not asked → `Now` → `Found (waiting for Max)`, do not do it.
 
 ## Folders
