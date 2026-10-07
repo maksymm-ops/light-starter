@@ -28,6 +28,15 @@ Never pull the full tree or full-format kits.
 - Desktop first; a mobile frame only if asked or obviously needed.
 - Use `figma_execute` for anything the dedicated tools do not cover; on a failed attempt, delete partial layers before retrying.
 
+## Design system (when asked to create or extend one)
+
+Source = approved frames only (`REFERENCES.md` status approved). On a page named **Design system**:
+1. Variables: color (brand, text, surface, border, states) and spacing; reuse existing collections, no duplicates.
+2. Text styles: one per role (H1–H4, body, small, label) per breakpoint the file uses.
+3. Components with variants for repeated elements actually present in the approved frames (button, link, card, input, nav, footer…). Do not invent states the frames do not show; list them as `Proposal`.
+4. Replace matching raw layers in the approved frames with instances only if Max asked.
+Record each rule in `DESIGN.md` (Confirmed if taken from approved frames, Proposal otherwise). After that, new sections are built only from this page.
+
 ## 4. Check (bounded)
 
 One `figma_capture_screenshot` of the new Section. Fix demonstrated problems (overlap, misalignment, clipped text, wrong style) in one pass and capture once more. Maximum three passes; then report what is left.

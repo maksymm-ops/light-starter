@@ -39,7 +39,7 @@ Never invent client facts; mark guesses as guesses. Found along the way but not 
 | Quick HTML concept | One self-contained file in `out/`, skill `frontend-design` (keep its planning internal). Placeholder art (simple SVG or blocks) is fine; generate images only if asked. Copy you invent is marked as such in the report |
 | Improve an existing design or page | `impeccable` |
 | Copy | Page copy `copywriting`; UI microcopy `better-writing` |
-| Design system from approved screens | `project-design-workflow` |
+| Design system from approved screens | Build it in Figma (not code): follow `figma-sections` → "Design system"; `project-design-workflow` only to sort sources first |
 | Inspiration | Max's library first (`find-cool-sites-references`), then One Page Love / A1 if needed; never copy literally |
 
 Use global skills by name only at the step that needs them. Images: user's global image rules (fal).
