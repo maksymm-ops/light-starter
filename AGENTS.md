@@ -52,7 +52,12 @@ One check, then stop: desktop 1280 px, plus one phone width only if the layout c
 
 ## Token rules
 
-Batch independent reads. Search before opening; read fragments, not whole files. Do not reread unchanged files, repeat near-identical screenshots or re-check after a passing check. No polling. Ask only when the answer changes the result.
+Batch independent reads. Search before opening; read fragments, not whole files. Do not reread unchanged files, repeat near-identical screenshots or re-check after a passing check. No polling.
+
+## Questions and reports
+
+- Unclear and it changes the result → ask before starting: a short numbered list. Minor points → decide yourself and mark them `Proposal`.
+- End every report with one line: what was added to `Found (waiting for Max)`, briefly by item, or «Новых находок нет».
 
 ## Global lessons
 
