@@ -22,6 +22,7 @@ Never pull the full tree or full-format kits.
 
 - Do not modify approved frames unless Max asked. New work goes into a named **Section** on the target page, placed beside or below existing content, never overlapping.
 - Reuse what exists: instances of the file's components (`figma_search_components` → `figma_instantiate_component`), its text styles and color variables. Create a new component or style only if nothing fits; mark it `Proposal` in `DESIGN.md`.
+- One text style per heading level across the file: if two H2s differ, use the existing style (or ask), never add a one-off size.
 - Auto layout on every frame; "fill container" for content that should stretch; sizes on the file's spacing scale (8px if none).
 - Real copy from `PROJECT.md` / `materials/`; if missing, short realistic placeholders marked `[TBD]`.
 - Desktop first; a mobile frame only if asked or obviously needed.
