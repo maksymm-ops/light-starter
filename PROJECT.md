@@ -27,4 +27,4 @@
 
 ## Decisions
 
-<!-- YYYY-MM-DD — decision — why. Newest first. One line each. -->
+<!-- YYYY-MM-DD — decision — why — what breaks if reverted. Newest first. One line each. -->
