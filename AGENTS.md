@@ -14,7 +14,7 @@ Small design and web tasks: Figma sections, fixes, one page of an existing proje
 - **Standard:** several steps or several screens. Write 1–3 "done when" lines and a short checklist in `PROJECT.md` → `Now`; tick items as they are done.
 - **Too big:** a full multi-page live site, logins, payments or a CMS → recommend moving to the big pack (`site-starter`) and stop.
 
-## Memory (update in the same reply, only when something durable appeared; a result still under review changes nothing until Max accepts it)
+## Memory (update in the same reply, only when something durable appeared; a result still under review changes nothing until Max accepts it: before «принято» touch only `Found` and open questions, never ticks, decisions or rules)
 
 | File | Holds | Rule |
 | --- | --- | --- |
