@@ -39,7 +39,7 @@ Record each rule in `DESIGN.md` (Confirmed if taken from approved frames, Propos
 
 ## 4. Check (bounded)
 
-Self-check first: every fill, stroke and text in the new Section uses the file's variables and styles (no raw colors or one-off sizes) and its components where they exist. Then one `figma_capture_screenshot` of the new Section. Fix demonstrated problems (overlap, misalignment, clipped text, wrong style) in one pass and capture once more. Maximum three passes; then report what is left.
+Self-check first, cheaply: one `figma_execute` script walks the new Section and returns only violations (count plus up to 5 examples: fills, strokes or text not bound to the file's variables or styles); never read the whole tree for this. Then one `figma_capture_screenshot` of the new Section. Fix demonstrated problems (overlap, misalignment, clipped text, wrong style) in one pass and capture once more. Maximum three passes; then report what is left.
 
 ## 5. Finish
 
