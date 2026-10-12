@@ -11,7 +11,8 @@ Small design and web tasks: Figma sections, fixes, one page of an existing proje
 ## Modes
 
 - **Micro (default):** one result, one main skill, one sufficient check, no research, no sub-agents. Read the minimum; stop after the check passes.
-- **Standard:** several steps or several screens. Write 1–3 "done when" lines and a short checklist in `PROJECT.md` → `Now`; tick items as they are done.
+- **Start of a new site or a big new part:** unless the materials already answer it, ask up to 5 short questions first (goal, audience, what must not change, done when), then write memory. Not for Micro tasks.
+- **Standard:** several steps or several screens. Write 1–3 "done when" lines, what must not change, and a short checklist in `PROJECT.md` → `Now`; tick items as they are done.
 - **Too big:** a full multi-page live site, logins, payments or a CMS → recommend moving to the big pack (`site-starter`) and stop.
 
 ## Memory (update in the same reply, only when something durable appeared; a result still under review changes nothing until Max accepts it: before «принято» touch only `Found` and open questions, never ticks, decisions or rules)

@@ -20,6 +20,7 @@
 
 - Task: —
 - Done when: —
+- Must not change: —
 
 ### Checklist
 
