@@ -5,7 +5,7 @@ description: Draw or edit website sections and pages in Figma for a light-starte
 
 # Figma sections
 
-Tools: `figma-console` MCP. If it does not answer, `figma-bridge`, for drafts and simple edits only: it cannot insert component instances, so for a page that must reuse components stop and tell Max. The official Figma MCP only as a last resort (Max is on the free Figma plan: a handful of calls per month). Say which one you used. Read-only tasks without Figma Desktop: figma-console reads by file URL (`fileUrl`) through the REST API.
+Tools: `figma-console` MCP. If it does not answer, `figwright`; then `figma-bridge`, which cannot insert component instances, so tell Max when a page that reuses components falls back to it. The official Figma MCP only as a last resort (Max is on the free Figma plan: a handful of calls per month). Say which one you used. Read-only tasks without Figma Desktop: figma-console reads by file URL (`fileUrl`) through the REST API.
 
 ## 1. Connect (once per chat)
 
