@@ -39,7 +39,7 @@ Record each rule in `DESIGN.md` (Confirmed if taken from approved frames, Propos
 
 ## 4. Check (bounded)
 
-Self-check first, cheaply: one `figma_execute` script walks the new Section and returns only violations (count plus up to 5 examples: fills, strokes or text not bound to the file's variables or styles); never read the whole tree for this. Then one `figma_capture_screenshot` of the new Section. Fix demonstrated problems (overlap, misalignment, clipped text, wrong style) in one pass and capture once more. Maximum three passes; then report what is left.
+Self-check first, cheaply: run `scripts/figma-audit.js` from the global skill `figma-page-from-system` through `figma_execute`, with `ROOT_ID` set to the new Section, and keep its `marker` line in the output (in Codex a Stop hook requires it). If that skill is missing, one `figma_execute` script walks the Section and returns only violations (count plus up to 5 examples: fills, strokes or text not bound to the file's variables or styles); never read the whole tree for this. Then one `figma_capture_screenshot` of the new Section. Fix demonstrated problems (overlap, misalignment, clipped text, wrong style) in one pass and capture once more. Maximum three passes; then report what is left.
 
 ## 5. Finish
 
