@@ -1,46 +1,25 @@
 ---
 name: figma-sections
-description: Draw or edit website sections and pages in Figma for a light-starter project through the figma-console MCP, reusing the file's own styles and components and checking the result with one screenshot per pass. Use for "сделай секции в Figma", "нарисуй страницу", "поправь блок в макете".
+description: Draw or edit website sections and pages in Figma for a light-starter project through the figma-console MCP, from the file's own styles and components, following the global skill figma-page-from-system. Use for "сделай секции в Figma", "нарисуй страницу", "вторичка по главной", "поправь блок в макете".
 ---
 
-# Figma sections
+# Figma sections (light-starter)
 
-Tools: `figma-console` MCP. If it does not answer, `figwright`; then `figma-bridge`, which cannot insert component instances, so tell Max when a page that reuses components falls back to it. The official Figma MCP only as a last resort (Max is on the free Figma plan: a handful of calls per month). Say which one you used. Read-only tasks without Figma Desktop: figma-console reads by file URL (`fileUrl`) through the REST API.
+The method lives in the global skill `figma-page-from-system` (`~/.claude/skills/figma-page-from-system/SKILL.md`; Codex: its own copy of that skill). Read it and follow it. This file only adds what is specific to a light-starter project.
 
-## 1. Connect (once per chat)
+## Project specifics
 
-`figma_get_status` with `probe: true`. Not connected → ask Max to open the file in Figma Desktop and run Plugins → Development → **Figma Desktop Bridge**, then stop. Check the connected file name matches `PROJECT.md` → Links.
-
-## 2. Learn the file, cheapest first
-
-- Design system: `figma_get_design_system_kit` with `format: "compact"` (tokens, styles, component names). Read `DESIGN.md` rows for the touched areas.
-- Target page: `figma_get_file_data` `verbosity: "summary"`, `depth: 1`; only then the nodes you need.
-- Look before building: `figma_capture_screenshot` of the target area (scale 1).
-Never pull the full tree or full-format kits.
-
-## 3. Build
-
-- Do not modify approved frames unless Max asked. New work goes into a named **Section** on the target page, placed beside or below existing content, never overlapping.
-- Reuse what exists: instances of the file's components (`figma_search_components` → `figma_instantiate_component`), its text styles and color variables. Create a new component or style only if nothing fits; mark it `Proposal` in `DESIGN.md`.
-- One text style per heading level across the file: if two H2s differ, use the existing style (or ask), never add a one-off size.
-- Auto layout on every frame; "fill container" for content that should stretch; sizes on the file's spacing scale (8px if none).
-- Real copy from `PROJECT.md` / `materials/`; if missing, short realistic placeholders marked `[TBD]`.
-- Desktop first; a mobile frame only if asked or obviously needed.
-- Use `figma_execute` for anything the dedicated tools do not cover; on a failed attempt, delete partial layers before retrying.
+- **Connect once per chat:** `figma_get_status` with `probe: true`. Not connected → ask Max to open the file in Figma Desktop and run Plugins → Development → **Figma Desktop Bridge**, then stop. Check the file name matches `PROJECT.md` → Links. Several files connected → pass `fileKey` on every call.
+- **Page kit = `DESIGN.md`.** Write it from the global skill's `references/page-kit-template.md`; keep the Status mark (Confirmed / Used / Proposal) on rules that came from you rather than from the scan or Max.
+- **Approved frames** are the ones with status `approved` in `REFERENCES.md`. The kit scan runs on all of them.
+- **Placement:** new work goes into a named Section on the target page, beside or below existing content, never overlapping approved frames.
+- **Copy:** real copy from `PROJECT.md` / `materials/`; if missing, short placeholders marked `[TBD]`.
+- **Micro task** (one fix in an existing block): skip the kit and the plan stop; copy-diff or audit only the changed node, one screenshot.
 
 ## Design system (when asked to create or extend one)
 
-Source = approved frames only (`REFERENCES.md` status approved). On a page named **Design system**:
-1. Variables: color (brand, text, surface, border, states) and spacing; reuse existing collections, no duplicates.
-2. Text styles: one per role (H1–H4, body, small, label) per breakpoint the file uses.
-3. Components with variants for repeated elements actually present in the approved frames (button, link, card, input, nav, footer…). Do not invent states the frames do not show; list them as `Proposal`.
-4. Replace matching raw layers in the approved frames with instances only if Max asked.
-Record each rule in `DESIGN.md` (Confirmed if taken from approved frames, Proposal otherwise). After that, new sections are built only from this page.
+Source = approved frames only. On a page named **Design system**: color variables by role (text on light, text on dark, surface, border, states) with a description each and scopes (text colors → text fills only, surfaces → frame fills); hide primitives from publishing; spacing variables; one text style per role; components only for repeated elements the approved frames show. Turn each `practice` line from the kit scan into a style only after Max says so. Record rules in `DESIGN.md`.
 
-## 4. Check (bounded)
+## Finish
 
-Self-check first, cheaply: run `scripts/figma-audit.js` from the global skill `figma-page-from-system` through `figma_execute`, with `ROOT_ID` set to the new Section, and keep its `marker` line in the output (in Codex a Stop hook requires it). If that skill is missing, one `figma_execute` script walks the Section and returns only violations (count plus up to 5 examples: fills, strokes or text not bound to the file's variables or styles); never read the whole tree for this. Then one `figma_capture_screenshot` of the new Section. Fix demonstrated problems (overlap, misalignment, clipped text, wrong style) in one pass and capture once more. Maximum three passes; then report what is left.
-
-## 5. Finish
-
-Report in Russian, 3–6 lines: what was made (page / Section name, node link), which components and styles were reused, what is new (`Proposal`), open questions. Update `DESIGN.md` only for durable rules and `PROJECT.md` → `Now`.
+Report in Russian, 3–6 lines: what was made (Section name, node link), what was cloned, check markers, open questions. Update `DESIGN.md` only for durable rules (after «принято»), `PROJECT.md` → `Now`.

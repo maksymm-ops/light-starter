@@ -20,7 +20,7 @@ Small design and web tasks: Figma sections, fixes, one page of an existing proje
 | File | Holds | Rule |
 | --- | --- | --- |
 | `PROJECT.md` | Quick context (≤400 tokens), links, `Now`, decisions log | Keep Quick context short and current; decisions are dated one-liners with why and what breaks if reverted |
-| `DESIGN.md` | Design rules with status: Confirmed / Used / Proposal / Deprecated | Only durable rules; a new decision you made is `Proposal` until Max approves |
+| `DESIGN.md` | Design rules and the Figma page kit, with status: Confirmed / Used / Proposal / Deprecated | Current state only, under ~2k tokens: replace outdated lines, never append a history. Only durable rules; a new decision you made is `Proposal` until Max approves |
 | `REFERENCES.md` | Every source: client material, Figma frame, link, image | ID (`M1…` client materials, `R1…` references), what, where, status (approved / working / old / reference / unknown), use for. Other files cite these IDs |
 
 Max's short commands: «принято» / «ок, утверждаю» = the result is accepted → update memory and suggest a new chat; «запомни: …» = write it to the right file and confirm in one line; «забудь / устарело: …» = mark it Deprecated or remove it.
@@ -37,7 +37,7 @@ Memory looks outdated → fix it now and say so in the report. Never invent clie
 
 | Task | How |
 | --- | --- |
-| Sections or pages in Figma | Read and follow `.claude/skills/figma-sections/SKILL.md` |
+| Sections or pages in Figma | Read and follow `.claude/skills/figma-sections/SKILL.md` (it runs the global `figma-page-from-system`: kit scan, block plan with Max's OK, copies, scripted checks) |
 | Edit a page of an existing project | Code path from `PROJECT.md` → Links. That repo's own rules win. Smallest change, one browser check (`chrome_devtools`), local checkpoint commit first if it has Git; never push unasked |
 | Quick HTML concept | One self-contained file in `out/`, skill `frontend-design` (keep its planning internal). Placeholder art (simple SVG or blocks) is fine; generate images only if asked. Copy you invent is marked as such in the report |
 | Improve an existing design or page | `impeccable` |
