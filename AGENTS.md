@@ -29,7 +29,7 @@ Memory looks outdated → fix it now and say so in the report. Never invent clie
 
 ## Folders
 
-- `inbox/` — drop zone for anything new (briefs, PDFs, texts, logos, screenshots, link lists). On "process inbox": read each file once, put facts into `PROJECT.md`, rules into `DESIGN.md`, sources into `REFERENCES.md`, then move the file to `materials/` (from the client) or `refs/` (references, inspiration). Look at every image. A file of unclear origin goes to `refs/` with status `unknown` plus a question in `Found`; do not use it. Report what went where in 3–6 lines.
+- `inbox/` — drop zone for anything new (briefs, PDFs, texts, logos, screenshots, link lists). On "process inbox" read `.claude/process-inbox.md` and follow it; do not process unasked.
 - `materials/` — client files, kept as originals. `refs/` — reference images and screenshots. Links live only in `REFERENCES.md`.
 - `out/` — create only when a task produces files (HTML concept, exports, generated images). Figma work stays in Figma.
 
@@ -40,26 +40,19 @@ Memory looks outdated → fix it now and say so in the report. Never invent clie
 | Sections or pages in Figma | Read and follow `.claude/skills/figma-sections/SKILL.md` (it runs the global `figma-page-from-system`: kit scan, block plan with Max's OK, copies, scripted checks) |
 | Edit a page of an existing project | Code path from `PROJECT.md` → Links. That repo's own rules win. Smallest change, one browser check (`chrome_devtools`), local checkpoint commit first if it has Git; never push unasked |
 | Quick HTML concept | One self-contained file in `out/`, skill `frontend-design` (keep its planning internal). Placeholder art (simple SVG or blocks) is fine; generate images only if asked. Copy you invent is marked as such in the report |
-| Improve an existing design or page | `impeccable` |
-| Copy | Page copy `copywriting`; UI microcopy `better-writing` |
 | Design system from approved screens | Build it in Figma (not code): follow `figma-sections` → "Design system"; `project-design-workflow` only to sort sources first |
-| Inspiration | Max's library first (`find-cool-sites-references`), then One Page Love / A1 if needed; never copy literally |
 
-Use global skills by name only at the step that needs them. Images: user's global image rules (fal).
+Global skills by name only at the step that needs them (copy `copywriting`/`better-writing`, redesign `impeccable`, inspiration Max's library first). Images: global fal rules.
 
 ## Checks
 
 One check, then stop: desktop 1280 px, plus one phone width only if the layout changes there. Tool: `chrome_devtools`; if it fails, the agent's built-in browser. Open single HTML files directly (file URL), no preview server. Say what stayed unverified.
 
-## Token rules
-
-Batch independent reads. Search before opening; read fragments, not whole files. Do not reread unchanged files, repeat near-identical screenshots or re-check after a passing check. No polling.
-
-## Questions and reports
-
-- Unclear and it changes the result → ask before starting: a short numbered list. Minor points → decide yourself and mark them `Proposal`.
-- End every report with one line: what was added to `Found (waiting for Max)`, briefly by item, or «Новых находок нет».
-
 ## Global lessons
 
-If something learned here should apply to all projects (a rule, a skill change), do not edit global files on your own: propose it to Max in one line. On his OK, Claude edits `~/.claude/CLAUDE.md` and syncs `max-agent-skills`; Codex edits its global `AGENTS.md`.
+A lesson for all projects: propose it to Max in one line; never edit global files on your own.
+
+## Coded sites only
+
+- Retrospective only when Max asks: review only this project's own session logs (via a chat-to-md export; never read or quote client data or secrets) for checks that found nothing, tokens spent re-reading context, and set-up that came late; write the result under `Found (waiting for Max)`.
+- Applies to coded sites (HTML concept, a page of an existing project), not Figma-only projects: after the first finished page, ask Max once whether to set up a free preview deploy for a real-phone check. Setup, any push and each later redeploy need his separate yes. Treat the link as public: noindex, no unreleased client material or secrets.
